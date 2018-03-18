@@ -2,7 +2,6 @@ package com.spring4all.mongodb;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
-import com.spring4all.mongodb.MongoOptionProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -14,11 +13,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(MongoOptionProperties.class)
 @ConditionalOnMissingBean(type = "org.springframework.data.mongodb.MongoDbFactory")
 public class MongoPlusAutoConfiguration {
-
-//    @Bean
-//    public MongoOptionProperties mongoOptionProperties() {
-//        return new MongoOptionProperties();
-//    }
 
     @Bean
     public MongoClientOptions mongoClientOptions(MongoOptionProperties mongoOptionProperties) {
